@@ -1,4 +1,4 @@
-#bin/bash
+#!/bin/bash
 set -e
 
 USER_EMAIL='tttestyr@gmail.com'
@@ -28,5 +28,6 @@ wait
 REPO_URL="https://github.com/Dtester1000/devops-project.git"
 git remote set-url origin "$REPO_URL"
 wait
+git branch -M main
 git push origin main
 echo "Pushed to remote repository"

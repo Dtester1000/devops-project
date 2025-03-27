@@ -1,4 +1,4 @@
-#bin/bash
+#!/bin/bash
 set -e
 
 REPO_URL="https://github.com/Dtester1000/Toy-Store-DevOps.git"
