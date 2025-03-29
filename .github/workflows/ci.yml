@@ -31,7 +31,7 @@ jobs:
        
       # Step 5: Build the Docker image
       - name: Build Docker image
-        run: docker build -t test3090/toy-store:0.0.5 .
+        run: docker build -t test3090/toy-store:0.0.5 ./Toy-Store-DevOps
 
       # Step 6: Push the Docker image to Docker Hub
       - name: Push Docker image to Docker Hub
