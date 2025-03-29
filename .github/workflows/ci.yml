@@ -22,13 +22,9 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       # Step 3: Build the Docker image
-      - name: Enter the project folder
-        run: cd Toy-Store
-
-      # Step 4: Build the Docker image     
       - name: Build Docker image
-        run: docker build -t test3090/toy-store:0.0.1 .
+        run: docker build -t test3090/toy-store:0.0.1 ./Toy-Store
 
       # Step 4: Push the Docker image to Docker Hub
       - name: Push Docker image to Docker Hub
-        run: docker push test3090/toy-store:0.0.5
+        run: docker push test3090/toy-store:0.0.1
