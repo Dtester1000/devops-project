@@ -26,7 +26,7 @@ jobs:
         run: git clone https://github.com/Dtester1000/Toy-Store-DevOps.git
 
        # Step 4: Cd folder
-      - name: cd Toy-Store
+      - name: cd Toy-Store-DevOps
         run: git clone https://github.com/Dtester1000/Toy-Store-DevOps.git
        
       # Step 5: Build the Docker image
