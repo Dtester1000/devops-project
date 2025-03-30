@@ -27,4 +27,4 @@ docker login
 
 cd Toy-Store
 
-kubectl apply -f web.yaml,mongo.yaml,sonar.yaml
+kubectl apply -f web.yml,mongo.yml,sonar.yml
