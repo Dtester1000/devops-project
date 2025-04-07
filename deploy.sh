@@ -3,14 +3,25 @@ set -e
 
 
 REPO_URL="https://github.com/Dtester1000/Toy-Store-DevOps.git"
-
-# Initialize a new git repository if not already initialized
-if [ ! -d .git ]; then
-    echo "Initializing git repository..."
-    git init
-    echo "Git repository initialized."
-else
-    echo "Git repository already initialized."
+# Check if Docker is installed
+if ! command -v docker &> /dev/null; then
+    echo "Docker is not installed. Please install Docker and try again."
+    exit 1
+fi
+# Check if kubectl is installed
+if ! command -v kubectl &> /dev/null; then
+    echo "kubectl is not installed. Please install kubectl and try again."
+    exit 1
+fi
+# Check if Docker is running
+if ! docker info &> /dev/null; then
+    echo "Docker is not running. Please start Docker and try again."
+    exit 1
+fi
+# Check if kubectl is configured
+if ! kubectl cluster-info &> /dev/null; then
+    echo "kubectl is not configured. Please configure kubectl and try again."
+    exit 1
 fi
 
 # Clone the repository
@@ -26,5 +37,7 @@ fi
 docker login
 
 cd Toy-Store
+cd kubeFiles
 
-kubectl apply -f web.yml,mongo.yml,sonar.yml
+kubectl apply -f web.yml,mongo.yml,grafana.yml,jenkins.yml,prometheusKube.yml,nodeEX.yml --validate=false
+
